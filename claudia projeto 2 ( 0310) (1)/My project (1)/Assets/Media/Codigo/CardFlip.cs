@@ -11,6 +11,9 @@ public class CardFlip : MonoBehaviour
 
     // Referência ao GameManager
     public GameManager gameManager;
+    [SerializeField]
+    GameObject managerObject;
+
 
     // Variável para evitar que a animação seja interrompida por cliques repetidos
     private bool isAnimating = false;
@@ -18,15 +21,8 @@ public class CardFlip : MonoBehaviour
     private void Start()
     {
         // Encontra o gamemanager na cena:
-        GameObject managerObject = GameObject.Find("GameManager");
-        if (managerObject != null)
-        {
-            gameManager = managerObject.GetComponent<GameManager>();
-        }
-        else
-        {
-            Debug.LogError("GameManager não encontrado na cena. Verifique se o nome está correto e o componente existe.");
-        }
+        gameManager = this.GetComponent<GameManager>();
+       
     }
 
     void Update()
