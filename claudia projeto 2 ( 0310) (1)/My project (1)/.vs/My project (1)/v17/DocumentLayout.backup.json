@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\25028130\\documents\\github\\projeto3\\claudia projeto 2 ( 0310) (1)\\my project (1)\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\assets\\media\\codigo\\cardflip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\media\\codigo\\cardflip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,34 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CardFlip.cs",
-              "DocumentMoniker": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Media\\Codigo\\CardFlip.cs",
-              "RelativeDocumentMoniker": "Assets\\Media\\Codigo\\CardFlip.cs",
-              "ToolTip": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Media\\Codigo\\CardFlip.cs",
-              "RelativeToolTip": "Assets\\Media\\Codigo\\CardFlip.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAAAJ0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T13:51:31.04Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAAEcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T13:51:21.711Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
