@@ -6,6 +6,14 @@ TagManager:
   tags:
   - tag corda
   - 'corda '
+  - ancora
+  - lampiao
+  - chapeu
+  - mapa
+  - canhao
+  - leme
+  - binoculo
+  - bussola
   layers:
   - Default
   - TransparentFX
