@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - tag corda
+  - 'corda '
   layers:
   - Default
   - TransparentFX
