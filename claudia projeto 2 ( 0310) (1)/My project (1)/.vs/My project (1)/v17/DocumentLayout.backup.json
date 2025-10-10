@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\claudia projeto 2 ( 0310) (1)\\My project (1)\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\25028100\\downloads\\projeto3-main\\claudia projeto 2 ( 0310) (1)\\my project (1)\\assets\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\assets\\media\\codigo\\cardflip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\media\\codigo\\cardflip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,39 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-<<<<<<< Updated upstream
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-=======
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CardFlip.cs",
-              "DocumentMoniker": "C:\\Users\\25028130\\Downloads\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Media\\Codigo\\CardFlip.cs",
-              "RelativeDocumentMoniker": "Assets\\Media\\Codigo\\CardFlip.cs",
-              "ToolTip": "C:\\Users\\25028130\\Downloads\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Media\\Codigo\\CardFlip.cs",
-              "RelativeToolTip": "Assets\\Media\\Codigo\\CardFlip.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAAAJ0AAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "menu_principal_meneger.cs",
+              "DocumentMoniker": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\menu_principal_meneger.cs",
+              "RelativeDocumentMoniker": "Assets\\menu_principal_meneger.cs",
+              "ToolTip": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\menu_principal_meneger.cs",
+              "RelativeToolTip": "Assets\\menu_principal_meneger.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T13:51:31.04Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-10-10T18:37:51.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\25028130\\Downloads\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\25028130\\Downloads\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEcAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CardFlip.cs",
+              "DocumentMoniker": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Media\\Codigo\\CardFlip.cs",
+              "RelativeDocumentMoniker": "Assets\\Media\\Codigo\\CardFlip.cs",
+              "ToolTip": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Media\\Codigo\\CardFlip.cs",
+              "RelativeToolTip": "Assets\\Media\\Codigo\\CardFlip.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T13:51:21.711Z",
-              "EditorCaption": ""
->>>>>>> Stashed changes
+              "WhenOpened": "2025-10-10T17:07:02.083Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\25028100\\Downloads\\Projeto3-main\\claudia projeto 2 ( 0310) (1)\\My project (1)\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T17:04:15.732Z"
             }
           ]
         }
