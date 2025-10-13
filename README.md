@@ -29,74 +29,104 @@ A mecânica segue o estilo clássico de jogo da memória: as cartas ficam virada
 
 ## 🛠 Estrutura de pastas
 
--Raiz<br>
-|<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
-|readme.md<br>
+<pre>
+|-- Raiz (Projeto3/)
+|
+|-- 
+|-- 📂 Documentos
+  │   ├── Entrega 1
+│   │   ├── Cálculo I
+│   │   ├── Ética e Pensamento Computacional
+│   │   ├── Algoritmos e Lógica de Programação
+│   │   ├── Jogos e Sistemas Interativos
+│   │   └── Projeto Interdisciplinar: Jogos Digitais
+│   └── Entrega 2
+│       ├── Cálculo I
+│       ├── Ética e Pensamento Computacional
+│       ├── Algoritmos e Lógica de Programação
+│       ├── Jogos e Sistemas Interativos
+│       └── Projeto Interdisciplinar: Jogos Digitais
+│
+|-- 📂 GameManagerDoJogo
+|
+|-- 📂 Imagens/imagem
+  | |-- [Arquivos de Imagem]
+|  
+|-- 📂 CronometroJogo
+   | |-- [Arquivos de tempo]
+|
+|-- 📂 MenuDoJogo
+| |-- 📂 jogoexecutado ( jogo em funcionamento)
+| |-- 📂 menudojogo02 ( primeira tentativa de menu e foi base para modificações futuras)
+|
+|-- 📂 Projeto3_Memoria
+|-- 📂 Src
+|-- 📂 TeladeMenuImagem
+   | |-- [Arquivos de Imagem]
+|
+|-- 📂 claudia projeto 2 (0310) (1)/My ...
+| |-- 📂 Pacotes
+| |-- 📂 Configurações do projeto
+| |-- 📄 Nova Pasta Compactada.zip
+|
+|-- 📂 código card. virar 1
+| |-- 📄 código 2 ( adicionamos o modo de virar com o mouse)
+| |-- 📄 código1 (base para virar e desvirar)
+|
+|-- 📄 .gitignore
+|-- 📄 README.md (Este arquivo)
+</pre>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
+A pasta raiz contem dois arquivos que devem ser alterados: MenuDoJogo e claudia projeto 2 (0310)
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+### 📝 Descrição das Pastas:
 
-Há também 4 pastas que seguem da seguinte forma:
+- **`documentos/`**: Contém toda a documentação do projeto.
+- **`MenuDoJogo/`**: Tela de menu icial do jogo, onde tem os primeiros comandos.
+-  **`CronometroJogo/`**: Temporizador do jogo.
+- **`imagens/`**: Contém as imagens do sistema.
+- **`card flip 1`**: Código-fonte do jogo.
+-  **`Projeto3Memoria`**: O jogo em funcionamento
+- **`readme.md`**: Este arquivo que você está lendo agora, contendo informações completas sobre o projeto.
 
-<b>documentos</b>: Toda a documentação estará nesta pasta.
-
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
-
-<b>imagens</b>: Imagens do sistema
-
-<b>src</b>: Pasta que contém o código fonte.
 
 ## 🛠 Instalação
 
-<b>Android:</b>
-
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>Windows:</b>
-
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
+### Windows:
+Não há instalação!  
+Apenas execute o arquivo **Build Windows.zip** disponível em `documentos/Entrega 2/Jogos e Sistemas Interativos`.
 
 ```sh
-Coloque código do prompt de comnando se for necessário
+# Se houver comandos necessários, insira-os aqui.
 ```
 
-<b>HTML:</b>
+### HTML:
+Não há instalação!  
+Execute o `index.html` localizado na pasta `executáveis/HTML` em qualquer navegador de internet.
 
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Para abrir e rodar este projeto, você precisará das seguintes ferramentas:
 
-Para abrir este projeto você necessita das seguintes ferramentas:
+- <a href="https://unity.com/pt/releases/editor/whats-new/6000.0.38">Unity 6000.0.38</a>
 
--<a href="https://godotengine.org/download">GODOT</a>
+Clone o repositório:
 
 ```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+git clone https://github.com/2025-1-MCC1/Projeto4/
 ```
 
+Faça o seguinte passo a passo:
+
+```sh
+Abra/instale o Unity 6000.0.38f1: Clique em Open Project e selecione a pasta onde se encontra o projeto.
+ Configure a cena inicial: Assets>SCR>CENAS e abra a cena inicial (Menu).
+ Execute o jogo: Pressione o botão Play no editor do Unity.
+```
+
+---
 ## 📋 Licença/License
 Utilize o link <https://chooser-beta.creativecommons.org/> para fazer uma licença CC BY 4.0.
 
