@@ -1,24 +1,16 @@
-# Projeto3
-Projeto 3
-```sh
-Utilize o site <https://www.toptal.com/developers/gitignore> para gerar seu arquivo gitignore e apague este campo.
-
-Vide tutoriais do PI.
-```
-
 # FECAP - Fundação de Comércio Álvares Penteado
 
 <p align="center">
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Nome do Projeto
+# Memória Pirata
 
-## Nome do Grupo
+## Código Fonte
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Claudia Dias</a>, <a href="www.linkedin.com/in/eliaquim-marcelino-silva">Eliaquim Silva</a>, <a href="https://www.linkedin.com/in/victorbarq/">Guilherme Augusto</a>, <a href="https://www.linkedin.com/in/victorbarq/">Matheus Fadini</a>, <a href="https://www.linkedin.com/in/victorbarq/">Michael Condori</a>
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/adriano-valente-534576135/">Adriano Felix Valente</a>, <a href="https://www.linkedin.com/in/remuniz/">Renata Muniz do Nascimento</a>, <a href="https://www.linkedin.com/404/">Luis Fernando dos Santos Pires</a>, <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/404/">Joyce Daniele Tavares</a>
 
 ## Descrição
 
@@ -28,11 +20,11 @@ Vide tutoriais do PI.
 </p>
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+O Memória Pirata é um projeto interdisciplinar criado por alunos de Ciência da Computação da FECAP, unindo programação, lógica, matemática aplicada e design de jogos. O objetivo é transformar um simples jogo da memória em uma experiência envolvente, aplicando na prática os conhecimentos aprendidos em sala.
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
+Na história, o Capitão Vargo Tempestade enfrenta dificuldades: seu navio está danificado e não pode zarpar em busca do tesouro secreto de Neridra Sombrális. Cabe ao jogador ajudá-lo a concluir missões para reparar a embarcação e reunir a tripulação.
 <br><br>
-May the force be with you!
+A mecânica segue o estilo clássico de jogo da memória: as cartas ficam viradas para baixo e o jogador deve encontrar os pares corretos. Cada acerto representa um reparo no navio e a chegada de um novo tripulante. Os erros, consomem tempo e atrasam a jornada. Com 16 cartas (8 pares distintos), o jogo desafia o jogador a resolver pistas e completar as tarefas necessárias para que o Capitão Vargo possa finalmente navegar rumo à grande aventura pirata.
 <br><br>
 
 ## 🛠 Estrutura de pastas
