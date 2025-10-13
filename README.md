@@ -20,7 +20,7 @@
 </p>
 
 
-O Memória Pirata é um projeto interdisciplinar criado por alunos de Ciência da Computação da FECAP, unindo programação, lógica, matemática aplicada e design de jogos. O objetivo é transformar um simples jogo da memória em uma experiência envolvente, aplicando na prática os conhecimentos aprendidos em sala.
+O Memória Pirata é um projeto interdisciplinar criado por alunos de Ciência da Computação da FECAP, unindo programação, lógica, matemática aplicada e design de jogos. O objetivo é transformar um simples jogo da memória em uma experiência envolvente, aplicando na prática os conhecimentos adquiridos em sala.
 <br><br>
 Na história, o Capitão Vargo Tempestade enfrenta dificuldades: seu navio está danificado e não pode zarpar em busca do tesouro secreto de Neridra Sombrális. Cabe ao jogador ajudá-lo a concluir missões para reparar a embarcação e reunir a tripulação.
 <br><br>
