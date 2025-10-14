@@ -16,7 +16,7 @@
 
 <p align="center">
 <img src="Imagem/Imagem_Capa_.png" alt="CAPA DO PROJETO" border="0">
-  Game by Imagem por ChatGPT
+  Image by ChatGPT
 </p>
 
 
