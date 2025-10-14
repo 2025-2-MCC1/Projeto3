@@ -16,7 +16,7 @@
 
 <p align="center">
 <img src="Imagem/Imagem_Capa_.png" alt="CAPA DO PROJETO" border="0">
-  Game by <a Image by ChatGPT">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+  Game by <a Image by ChatGPT">
 </p>
 
 
