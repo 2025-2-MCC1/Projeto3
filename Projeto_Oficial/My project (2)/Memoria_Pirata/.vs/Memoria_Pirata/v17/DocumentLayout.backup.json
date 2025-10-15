@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\",
+  "WorkspaceRootPath": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|c:\\users\\25028130\\documents\\github\\projeto3\\projeto_oficial\\my project (2)\\memoria_pirata\\assets\\scenes\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|c:\\users\\25028261\\documents\\github\\projeto3\\projeto_oficial\\my project (2)\\memoria_pirata\\assets\\scripts\\scrit_jogar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scrit_jogar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "menu_principal_meneger.cs",
-              "DocumentMoniker": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scenes\\menu_principal_meneger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scenes\\menu_principal_meneger.cs",
-              "ToolTip": "C:\\Users\\25028130\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scenes\\menu_principal_meneger.cs",
-              "RelativeToolTip": "Assets\\Scenes\\menu_principal_meneger.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Scrit_Jogar.cs",
+              "DocumentMoniker": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Scrit_Jogar.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Scrit_Jogar.cs",
+              "ToolTip": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Scrit_Jogar.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Scrit_Jogar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T11:59:21.782Z",
+              "WhenOpened": "2025-10-15T13:35:36.902Z",
               "EditorCaption": ""
             },
             {
