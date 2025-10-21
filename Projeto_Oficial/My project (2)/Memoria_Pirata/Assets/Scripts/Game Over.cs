@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] private string TentardeNovo;
+    [SerializeField] private GameObject VoltaraoMenu;
+    [SerializeField] private GameObject Abandonar;
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        SceneManager.LoadScene(1);
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()

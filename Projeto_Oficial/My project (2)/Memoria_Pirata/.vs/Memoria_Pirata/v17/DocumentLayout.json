@@ -1,17 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\",
+  "WorkspaceRootPath": "C:\\Users\\25028261\\Documents\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|c:\\users\\25028261\\documents\\github\\projeto3\\projeto_oficial\\my project (2)\\memoria_pirata\\assets\\scripts\\game over.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|c:\\users\\25028261\\documents\\projeto3\\projeto_oficial\\my project (2)\\memoria_pirata\\assets\\scripts\\game over.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game over.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|c:\\users\\25028261\\documents\\github\\projeto3\\projeto_oficial\\my project (2)\\memoria_pirata\\assets\\scripts\\scrit_jogar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scrit_jogar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\assets\\scripts\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|c:\\users\\25028261\\documents\\projeto3\\projeto_oficial\\my project (2)\\memoria_pirata\\assets\\scripts\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79DE5BAC-39CA-5819-5AF3-B4C204082076}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu_principal_meneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,45 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "menu_principal_meneger.cs",
+              "DocumentMoniker": "C:\\Users\\25028261\\Documents\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\menu_principal_meneger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\menu_principal_meneger.cs",
+              "ToolTip": "C:\\Users\\25028261\\Documents\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\menu_principal_meneger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\menu_principal_meneger.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T12:30:42.885Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game Over.cs",
-              "DocumentMoniker": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Game Over.cs",
+              "DocumentMoniker": "C:\\Users\\25028261\\Documents\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Game Over.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game Over.cs",
-              "ToolTip": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Game Over.cs",
+              "ToolTip": "C:\\Users\\25028261\\Documents\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Game Over.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game Over.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T13:44:32.589Z",
+              "WhenOpened": "2025-10-21T12:28:12.098Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scrit_Jogar.cs",
-              "DocumentMoniker": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Scrit_Jogar.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Scrit_Jogar.cs",
-              "ToolTip": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\Scrit_Jogar.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Scrit_Jogar.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T12:59:15.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "menu_principal_meneger.cs",
-              "DocumentMoniker": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\menu_principal_meneger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\menu_principal_meneger.cs",
-              "ToolTip": "C:\\Users\\25028261\\Documents\\GitHub\\Projeto3\\Projeto_Oficial\\My project (2)\\Memoria_Pirata\\Assets\\Scripts\\menu_principal_meneger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\menu_principal_meneger.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T12:58:53.387Z"
             }
           ]
         }
