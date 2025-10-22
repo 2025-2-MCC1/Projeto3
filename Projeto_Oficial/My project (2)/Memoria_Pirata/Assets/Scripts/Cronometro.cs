@@ -1,95 +1,78 @@
-// Isso aqui é pra avisar o Unity que a gente vai usar aquele texto mais bonito, o TextMeshPro.
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
-// Aqui começa a nossa "receita de bolo" pro cronômetro.
 public class CronometroJogo : MonoBehaviour
 {
-    // Crio uma "caixinha" pública no Inspector pra eu poder arrastar o objeto de texto da tela pra cá.
     public TextMeshProUGUI textoCronometro;
-
-    // Aqui eu defino quanto tempo o jogador vai ter. 120 segundos = 2 minutos.
     [SerializeField] private float tempoInicial = 120f;
 
-    // Essa variável vai guardar o tempo que vai diminuindo.
     private float tempoRestante;
-    // Essa aqui funciona como um interruptor pra dizer se o cronômetro está ligado ou não.
     private bool cronometroAtivo = false;
 
-    // Essa parte do código roda uma única vez, bem quando o objeto aparece na cena (tipo no "Play").
+    // Índice da cena de Game Over
+    private int indiceCenaGameOver = 2;
+
+    // Delay antes de trocar de cena (segundos)
+    [SerializeField] private float delayAntesTrocarCena = 1f;
+
     void Start()
     {
-        // Já manda ligar o cronômetro logo de cara.
-        IniciarCronometro();
+        tempoRestante = tempoInicial;
+        cronometroAtivo = true;
+        AtualizarDisplay(tempoRestante);
+
+        if (textoCronometro == null)
+            Debug.LogWarning("CronometroJogo: Texto Cronometro não foi atribuído no Inspector!");
     }
 
-    // Essa função é um loop infinito, o Unity fica chamando ela o tempo todo, várias vezes por segundo.
     void Update()
     {
-        // Só faz alguma coisa se o nosso "interruptor" estiver ligado.
-        if (cronometroAtivo)
+        if (!cronometroAtivo) return;
+
+        tempoRestante -= Time.deltaTime;
+
+        if (tempoRestante <= 0f)
         {
-            // Se o tempo restante ainda for maior que zero...
-            if (tempoRestante > 0)
-            {
-                // ... a mágica acontece aqui! A gente diminui um pouquinho do tempo a cada frame.
-                tempoRestante -= Time.deltaTime;
-
-                // Manda a função lá de baixo atualizar o que aparece na tela.
-                AtualizarDisplay(tempoRestante);
-            }
-            // Se o tempo não for maior que zero, significa que acabou!
-            else
-            {
-                // Zera o tempo pra não ficar negativo e desliga o "interruptor".
-                tempoRestante = 0;
-                cronometroAtivo = false;
-
-                // Manda atualizar a tela uma última vez (pra mostrar "00:00").
-                AtualizarDisplay(tempoRestante);
-
-                // Agora, chama a função que faz as coisas de "fim de jogo".
-                FimDeJogo();
-            }
+            tempoRestante = 0f;
+            cronometroAtivo = false;
+            AtualizarDisplay(tempoRestante);
+            StartCoroutine(TrocarCenaComDelay());
+        }
+        else
+        {
+            AtualizarDisplay(tempoRestante);
         }
     }
 
-    // Essa é a função que a gente chama pra dar o "start" no cronômetro.
-    public void IniciarCronometro()
-    {
-        // Pega o tempo inicial que a gente definiu lá em cima e coloca no tempo restante.
-        tempoRestante = tempoInicial;
-        // Liga o nosso "interruptor".
-        cronometroAtivo = true;
-    }
-
-    // Essa função serve pra pegar o número "quebrado" do tempo e deixar ele bonitinho na tela.
     private void AtualizarDisplay(float tempo)
     {
-        // Uma segurança pra não mostrar tempo negativo na tela, tipo "-1 segundos".
-        if (tempo < 0)
-        {
-            tempo = 0;
-        }
+        int minutos = Mathf.FloorToInt(tempo / 60);
+        int segundos = Mathf.FloorToInt(tempo % 60);
 
-        // Pega o tempo total em segundos e quebra ele em minutos e segundos.
-        float minutos = Mathf.FloorToInt(tempo / 60);
-        float segundos = Mathf.FloorToInt(tempo % 60);
-
-        // Monta o texto no formato "00:00" e manda lá pra caixa de texto da tela.
-        textoCronometro.text = string.Format("{0:00}:{1:00}", minutos, segundos);
+        if (textoCronometro != null)
+            textoCronometro.text = string.Format("{0:00}:{1:00}", minutos, segundos);
     }
 
-    // Aqui a gente define o que acontece quando o tempo zera.
-    private void FimDeJogo()
+    private IEnumerator TrocarCenaComDelay()
     {
-        // Manda uma mensagem pro Console do Unity (só pra gente, o dev, saber que funcionou).
-        Debug.Log("O JOGO ACABOU!");
+        // Mostra a mensagem final
+        if (textoCronometro != null)
+            textoCronometro.text = "TEMPO ESGOTADO!";
 
-        // Muda o texto na tela do jogo para o jogador ver.
-        textoCronometro.text = "TEMPO ESGOTADO!";
+        Debug.Log("CronometroJogo: tempo zerou, aguardando " + delayAntesTrocarCena + "s antes de trocar de cena.");
+        yield return new WaitForSeconds(delayAntesTrocarCena);
 
-        // DICA: Aqui seria um bom lugar pra colocar o código que impede o jogador de continuar clicando nas cartas.
+        // Verifica se o índice existe na Build Settings
+        if (indiceCenaGameOver >= 0 && indiceCenaGameOver < SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log("CronometroJogo: carregando cena de índice " + indiceCenaGameOver);
+            SceneManager.LoadScene(indiceCenaGameOver);
+        }
+        else
+        {
+            Debug.LogError("CronometroJogo: índice da cena inválido! Verifique Build Settings.");
+        }
     }
 }
-
