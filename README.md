@@ -39,13 +39,13 @@ A mecânica segue o estilo clássico de jogo da memória: as cartas ficam virada
 │   │   ├── Ética e Pensamento Computacional
 │   │   ├── Algoritmos e Lógica de Programação
 │   │   ├── Jogos e Sistemas Interativos
-│   │   └── Projeto Interdisciplinar: Jogos Digitais
+│   │   └── Projeto Interdisciplinar Jogos Digitais
 │   └── Entrega 2
 │       ├── Cálculo I
 │       ├── Ética e Pensamento Computacional
 │       ├── Algoritmos e Lógica de Programação
 │       ├── Jogos e Sistemas Interativos
-│       └── Projeto Interdisciplinar: Jogos Digitais
+│       └── Projeto Interdisciplinar Jogos Digitais
 │
 |-- 📂 GameManagerDoJogo
 |
@@ -59,16 +59,11 @@ A mecânica segue o estilo clássico de jogo da memória: as cartas ficam virada
 | |-- 📂 jogoexecutado ( jogo em funcionamento)
 | |-- 📂 menudojogo02 ( primeira tentativa de menu e foi base para modificações futuras)
 |
-|-- 📂 Projeto3_Memoria
-|-- 📂 Src
 |-- 📂 TeladeMenuImagem
    | |-- [Arquivos de Imagem]
-|
-|-- 📂 claudia projeto 2 (0310) (1)/My ...
-| |-- 📂 Pacotes
-| |-- 📂 Configurações do projeto
-| |-- 📄 Nova Pasta Compactada.zip
-|
+|  
+|📂 Projeto_Oficial
+| |-- 📂  /Memoria_Pirata
 |-- 📂 código card. virar 1
 | |-- 📄 código 2 ( adicionamos o modo de virar com o mouse)
 | |-- 📄 código1 (base para virar e desvirar)
@@ -87,7 +82,7 @@ A pasta raiz contem dois arquivos que devem ser alterados: MenuDoJogo e claudia 
 -  **`CronometroJogo/`**: Temporizador do jogo.
 - **`imagens/`**: Contém as imagens do sistema.
 - **`card flip 1`**: Código-fonte do jogo.
--  **`Projeto3Memoria`**: O jogo em funcionamento
+-  **`Projeto_Oficial`**: O jogo em funcionamento
 - **`readme.md`**: Este arquivo que você está lendo agora, contendo informações completas sobre o projeto.
 
 

@@ -10,6 +10,7 @@ public class CardFlip : MonoBehaviour
 
     private void Start()
     {
+        // Encontra o GameManager na cena
         gameManager = GameObject.FindFirstObjectByType<GameManager>();
         if (gameManager == null)
             Debug.LogError("GameManager não encontrado!");
@@ -17,12 +18,15 @@ public class CardFlip : MonoBehaviour
 
     void Update()
     {
-        if (isAnimating || gameManager == null || !gameManager.canClick) return;
+        // Bloqueia cliques durante animação ou se GameManager não existe
+        if (isAnimating || gameManager == null || !gameManager.canClick)
+            return;
 
         if (Input.GetMouseButtonDown(0))
         {
             Camera mainCamera = Camera.main;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 GameObject clickedObject = hit.collider.gameObject;
@@ -30,6 +34,7 @@ public class CardFlip : MonoBehaviour
 
                 cardToFlip = parent;
 
+                // Impede clicar na mesma carta ou em mais de duas
                 if (cardToFlip == gameManager.cardFliped1 || cardToFlip == gameManager.cardFliped2)
                     return;
 
@@ -62,6 +67,7 @@ public class CardFlip : MonoBehaviour
             StartCoroutine(FlipAnimationObject(cardToUnflip));
     }
 
+    // Coroutine do clique
     private IEnumerator FlipAnimation()
     {
         if (cardToFlip == null || !cardToFlip.activeInHierarchy)
@@ -74,6 +80,7 @@ public class CardFlip : MonoBehaviour
         cardToFlip = null;
     }
 
+    // Coroutine usada pelo GameManager
     private IEnumerator FlipAnimationObject(GameObject card)
     {
         if (card == null || !card.activeInHierarchy)
@@ -82,6 +89,7 @@ public class CardFlip : MonoBehaviour
         yield return StartCoroutine(PerformFlip(card));
     }
 
+    // Lógica de rotação (vira ou desvira)
     private IEnumerator PerformFlip(GameObject card)
     {
         if (card == null || !card.activeInHierarchy)
@@ -89,18 +97,18 @@ public class CardFlip : MonoBehaviour
 
         isAnimating = true;
 
-        Quaternion startRot = card.transform.rotation;
-        Quaternion endRot = startRot * Quaternion.Euler(180f, 0f, 0f);
-        float elapsed = 0f;
+        Quaternion startRotation = card.transform.rotation;
+        Quaternion endRotation = startRotation * Quaternion.Euler(180f, 0f, 0f);
 
-        while (elapsed < flipDuration)
+        float elapsedTime = 0f;
+        while (elapsedTime < flipDuration)
         {
-            card.transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / flipDuration);
-            elapsed += Time.deltaTime;
+            card.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / flipDuration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        card.transform.rotation = endRot;
+        card.transform.rotation = endRotation;
         isAnimating = false;
     }
 }
