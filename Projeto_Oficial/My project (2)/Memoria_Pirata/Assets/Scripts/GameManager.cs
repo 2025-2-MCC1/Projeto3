@@ -3,70 +3,62 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    // Variáveis públicas para armazenar as cartas viradas
     public GameObject cardFliped1;
     public GameObject cardFliped2;
-
-    // O tempo de espera antes de desvirar as cartas
     public float matchCheckDelay = 1.0f;
+    public bool canClick = true; // Bloqueia clique durante animação
 
-    // O CardFlip chama este método quando a segunda carta é virada
     public void CheckForMatch()
     {
-        // Começa a coroutine para verificar o par após um atraso
         StartCoroutine(CheckMatchAndReset());
     }
 
     private IEnumerator CheckMatchAndReset()
     {
-        // Espera por um momento para que o jogador veja a segunda carta
+        canClick = false;
         yield return new WaitForSeconds(matchCheckDelay);
 
-        // Certifique-se de que ambas as cartas ainda existem (não foram destruídas se fosse um par)
         if (cardFliped1 == null || cardFliped2 == null)
         {
-            // Se algum for nulo (p. ex., já foram destruídos por acerto), apenas reseta o estado
             cardFliped1 = null;
             cardFliped2 = null;
+            canClick = true;
             yield break;
         }
 
-        // *************** LÓGICA DE VERIFICAÇÃO DE PAR ***************
+        CardInfo info1 = cardFliped1.GetComponent<CardInfo>();
+        CardInfo info2 = cardFliped2.GetComponent<CardInfo>();
 
-        // ** Aqui ficaria sua lógica real de checagem de match (por ID, Tag, etc.) **
-        bool isMatch = false;
+        bool isMatch = info1 != null && info2 != null && info1.id == info2.id;
 
         if (!isMatch)
         {
-            // Se NÃO for um par, DESVIRA as duas cartas.
-
             CardFlip flip1 = cardFliped1.GetComponent<CardFlip>();
             CardFlip flip2 = cardFliped2.GetComponent<CardFlip>();
 
-            if (flip1 != null)
-            {
-                // CHAMA O NOVO MÉTODO: Passa a referência da carta para ela se desvirar
-                flip1.StartFlipBack(cardFliped1);
-            }
-            if (flip2 != null)
-            {
-                // CHAMA O NOVO MÉTODO: Passa a referência da carta para ela se desvirar
-                flip2.StartFlipBack(cardFliped2);
-            }
+            if (flip1 != null) flip1.StartFlipBack(cardFliped1);
+            if (flip2 != null) flip2.StartFlipBack(cardFliped2);
 
-            // Aguarda a duração da animação para que ela complete antes de liberar o clique
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.5f); // aguarda animação desvirar
         }
         else
         {
-            // Lógica para quando FOR um par (p. ex., desativar ou destruir as cartas)
-            Debug.Log("Match encontrado!");
-            // ... (Destruir ou desativar cartas aqui) ...
+            // Desativa antes de destruir para evitar que coroutines travem
+            GameObject temp1 = cardFliped1;
+            GameObject temp2 = cardFliped2;
+
+            cardFliped1 = null;
+            cardFliped2 = null;
+
+            temp1.SetActive(false);
+            temp2.SetActive(false);
+
+            Destroy(temp1, 0.1f);
+            Destroy(temp2, 0.1f);
         }
 
-        // *************** Ações para resetar o GameManager ***************
-        // Zera as referências DEPOIS de toda a animação ou lógica de acerto.
         cardFliped1 = null;
         cardFliped2 = null;
+        canClick = true;
     }
 }
