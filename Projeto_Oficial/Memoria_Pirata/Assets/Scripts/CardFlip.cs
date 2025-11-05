@@ -1,9 +1,9 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using System.Collections;
 
 public class CardFlip : MonoBehaviour
 {
-    public float flipDuration = 0.35f; // DuraÁ„o da animaÁ„o
+    public float flipDuration = 0.35f; // Dura√ß√£o da anima√ß√£o
     private GameObject cardToFlip = null;
     private bool isAnimating = false;
     public GameManager gameManager;
@@ -13,16 +13,18 @@ public class CardFlip : MonoBehaviour
         // Encontra o GameManager na cena
         gameManager = GameObject.FindFirstObjectByType<GameManager>();
         if (gameManager == null)
-            Debug.LogError("GameManager n„o encontrado!");
+        {
+            Debug.LogError("GameManager n√£o encontrado!");
+        }
     }
 
     void Update()
     {
-        // Bloqueia cliques durante animaÁ„o ou se GameManager n„o existe
+        // Bloqueia cliques durante anima√ß√£o ou se GameManager n√£o existe
         if (isAnimating || gameManager == null || !gameManager.canClick)
             return;
 
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0))
         {
             Camera mainCamera = Camera.main;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -30,8 +32,17 @@ public class CardFlip : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 GameObject clickedObject = hit.collider.gameObject;
-                GameObject parent = clickedObject.transform.parent != null ? clickedObject.transform.parent.gameObject : clickedObject;
-                Debug.Log(clickedObject.name);
+                GameObject parent = clickedObject.transform.parent != null
+                    ? clickedObject.transform.parent.gameObject
+                    : clickedObject;
+
+                // Ignora clique se n√£o for uma carta (ex: clicou no fundo/cubo)
+                if (parent.GetComponent<Card>() == null)
+                {
+                    Debug.Log("Clique fora da carta ignorado.");
+                    return;
+                }
+
                 cardToFlip = parent;
 
                 // Impede clicar na mesma carta ou em mais de duas
@@ -55,10 +66,7 @@ public class CardFlip : MonoBehaviour
                 }
 
                 if (registered)
-                   
-                        StartCoroutine(FlipAnimation());
-                   
-                    
+                    StartCoroutine(FlipAnimation());
             }
         }
     }
@@ -67,13 +75,14 @@ public class CardFlip : MonoBehaviour
     public void StartFlipBack(GameObject cardToUnflip)
     {
         if (!isAnimating)
+        {
             StartCoroutine(FlipAnimationObject(cardToUnflip));
+        }
     }
 
     // Coroutine do clique
     private IEnumerator FlipAnimation()
     {
-
         if (cardToFlip == null || !cardToFlip.activeInHierarchy)
         {
             cardToFlip = null;
@@ -93,21 +102,18 @@ public class CardFlip : MonoBehaviour
         yield return StartCoroutine(PerformFlip(card));
     }
 
-    // LÛgica de rotaÁ„o (vira ou desvira)
+    // L√≥gica de rota√ß√£o (vira ou desvira)
     private IEnumerator PerformFlip(GameObject card)
     {
         if (card == null || !card.activeInHierarchy)
             yield break;
-        Quaternion startRotation = Quaternion.identity;
-            Quaternion endRotation = Quaternion.identity;
-        isAnimating = true;
 
-        if (card.name != "fundo")
-        {
-            startRotation = card.transform.rotation;
-            endRotation = startRotation * Quaternion.Euler(180f, 0f, 0f);
-        }
+        Quaternion startRotation = card.transform.rotation;
+        Quaternion endRotation = startRotation * Quaternion.Euler(180f, 0f, 0f);
+
+        isAnimating = true;
         float elapsedTime = 0f;
+
         while (elapsedTime < flipDuration)
         {
             card.transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsedTime / flipDuration);
@@ -119,11 +125,12 @@ public class CardFlip : MonoBehaviour
         isAnimating = false;
     }
 
-    // Verifica se as duas cartas viradas s„o iguais
+    // Verifica se as duas cartas viradas s√£o iguais
     private IEnumerator CheckMatchCoroutine()
     {
         gameManager.canClick = false;
 
+        // Espera antes de checar
         yield return new WaitForSeconds(0.6f);
 
         GameObject card1 = gameManager.cardFliped1;
@@ -136,15 +143,16 @@ public class CardFlip : MonoBehaviour
 
             if (c1 == null || c2 == null)
             {
-                Debug.LogWarning("Uma das cartas n„o tem o componente Card.");
+                Debug.LogWarning("Uma das cartas n√£o tem o componente Card.");
             }
             else
             {
                 bool isMatch = false;
 
-                if (!string.IsNullOrEmpty(c1.cardId) || !string.IsNullOrEmpty(c2.cardId))
+                // Usa cardId quando dispon√≠vel, sen√£o compara tag
+                if (!string.IsNullOrEmpty(c1.cardId) && !string.IsNullOrEmpty(c2.cardId))
                 {
-                    isMatch = string.Equals(c1.cardId?.Trim(), c2.cardId?.Trim(), System.StringComparison.Ordinal);
+                    isMatch = string.Equals(c1.cardId.Trim(), c2.cardId.Trim(), System.StringComparison.Ordinal);
                 }
                 else
                 {
@@ -153,16 +161,13 @@ public class CardFlip : MonoBehaviour
 
                 if (isMatch)
                 {
-                    // Faz um pequeno atraso antes de destruir (pra deixar a virada completa)
+                    // Faz um pequeno atraso antes de destruir
                     yield return new WaitForSeconds(0.25f);
 
-                    // Destroi de forma segura
-                    if (card1 != null)
-                        Destroy(card1);
-                    if (card2 != null)
-                        Destroy(card2);
+                    if (card1 != null) Destroy(card1);
+                    if (card2 != null) Destroy(card2);
                 }
-                else if (!isMatch || card1.name == "fundo" || card2.name == "fundo")
+                else
                 {
                     // Se forem diferentes, desvira as duas
                     StartCoroutine(FlipAnimationObject(card1));
@@ -171,13 +176,12 @@ public class CardFlip : MonoBehaviour
             }
         }
 
-        // Limpa referÍncias do GameManager antes de reativar cliques
+        // Limpa e reativa cliques
         gameManager.cardFliped1 = null;
         gameManager.cardFliped2 = null;
 
-        // Espera um pouquinho pra garantir que as destruiÁıes acabaram
+        // Espera um pouquinho antes de liberar clique
         yield return new WaitForSeconds(0.2f);
         gameManager.canClick = true;
     }
-
 }
