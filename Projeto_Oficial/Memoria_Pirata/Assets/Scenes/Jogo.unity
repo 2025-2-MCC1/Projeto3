@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoCronometro: {fileID: 928890582}
-  tempoInicial: 150
+  tempoInicial: 40
   indiceCenaGameOver: 2
   delayAntesTrocarCena: 1
 --- !u!4 &1046652774
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoCronometro: {fileID: 0}
-  tempoInicial: 120
+  tempoInicial: 40
   indiceCenaGameOver: 2
   delayAntesTrocarCena: 1
 --- !u!1 &1459727748

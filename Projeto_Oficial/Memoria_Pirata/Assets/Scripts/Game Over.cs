@@ -1,25 +1,42 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private string TentardeNovo;
-    [SerializeField] private GameObject VoltaraoMenu;
-    [SerializeField] private GameObject Abandonar;
-    public void Play()
+    [Header("Painel da tela de Game Over")]
+    [SerializeField] private GameObject painelGameOver;
+
+    private bool jogoAcabou = false;
+
+    void Start()
     {
-        SceneManager.LoadScene(1);
-    }
-    public void Menu()
-    {
-        SceneManager.LoadScene(0);
+        // Garante que o painel começa desativado
+        if (painelGameOver != null)
+            painelGameOver.SetActive(false);
     }
 
-    public void Quit()
+    // Chame este método quando o jogador perder
+    public void AtivarGameOver()
     {
-        Application.Quit();
-        Debug.Log("Jogador Abandonou o Jogo");
+        if (jogoAcabou) return;
+        jogoAcabou = true;
+
+        Time.timeScale = 0f; // pausa o jogo
+        painelGameOver.SetActive(true);
+        Debug.Log("Game Over ativado!");
+    }
+
+    // Botão "Jogar novamente"
+    public void JogarNovamente()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // Botão "Voltar ao menu"
+    public void VoltarAoMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0); // 0 = cena do menu principal
     }
 }

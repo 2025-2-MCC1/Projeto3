@@ -1,33 +1,34 @@
-using TMPro;
+Ôªøusing TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CronometroJogo : MonoBehaviour
 {
-    [Header("ReferÍncias")]
+    [Header("Refer√™ncias")]
+    [Tooltip("Arraste aqui o texto do cron√¥metro (TextMeshProUGUI) que aparece na tela.")]
     public TextMeshProUGUI textoCronometro;
 
-    [Header("ConfiguraÁıes de Tempo")]
-    [SerializeField] private float tempoInicial = 60f; // 60 segundos
+    [Header("Configura√ß√µes de Tempo")]
+    [SerializeField] private float tempoInicial = 60f; // Tempo total em segundos
 
     private float tempoRestante;
     private bool cronometroAtivo;
 
-    [Header("ConfiguraÁıes de Cena")]
+    [Header("Configura√ß√µes de Cena")]
     [SerializeField] private int indiceCenaGameOver = 2;
     [SerializeField] private float delayAntesTrocarCena = 1f;
 
     void Start()
     {
-        if (textoCronometro == null)
-            Debug.LogWarning("CronometroJogo: Texto CronÙmetro n„o foi atribuÌdo no Inspector!");
-
-        // Inicializa o tempo
+        // Inicializa o tempo e garante que o texto n√£o vai gerar erros
         tempoRestante = tempoInicial;
         cronometroAtivo = true;
 
-        AtualizarDisplay(tempoRestante);
+        if (textoCronometro != null)
+            AtualizarDisplay(tempoRestante);
+        else
+            Debug.Log("‚ö†Ô∏è Cron√¥metro iniciado sem texto atribu√≠do no Inspector. O jogo continuar√° normalmente.");
     }
 
     void Update()
@@ -35,22 +36,24 @@ public class CronometroJogo : MonoBehaviour
         if (!cronometroAtivo)
             return;
 
-        // Diminui o tempo de acordo com o tempo real
+        // Contagem regressiva
         tempoRestante -= Time.deltaTime;
 
         if (tempoRestante <= 0f)
         {
-            // Garante que o tempo n„o fique negativo
             tempoRestante = 0f;
             cronometroAtivo = false;
-            AtualizarDisplay(tempoRestante);
 
-            // Inicia a troca de cena
+            if (textoCronometro != null)
+                AtualizarDisplay(tempoRestante);
+
+            // Inicia troca de cena com delay
             StartCoroutine(TrocarCenaComDelay());
         }
         else
         {
-            AtualizarDisplay(tempoRestante);
+            if (textoCronometro != null)
+                AtualizarDisplay(tempoRestante);
         }
     }
 
@@ -59,8 +62,7 @@ public class CronometroJogo : MonoBehaviour
         int minutos = Mathf.FloorToInt(tempo / 60);
         int segundos = Mathf.FloorToInt(tempo % 60);
 
-        if (textoCronometro != null)
-            textoCronometro.text = $"{minutos:00}:{segundos:00}";
+        textoCronometro.text = $"{minutos:00}:{segundos:00}";
     }
 
     private IEnumerator TrocarCenaComDelay()
@@ -68,18 +70,17 @@ public class CronometroJogo : MonoBehaviour
         if (textoCronometro != null)
             textoCronometro.text = "TEMPO ESGOTADO!";
 
-        Debug.Log($"CronometroJogo: tempo zerou, aguardando {delayAntesTrocarCena}s antes de trocar de cena.");
+        Debug.Log($"‚è∞ Cron√¥metro zerou ‚Äî trocando para cena {indiceCenaGameOver} em {delayAntesTrocarCena}s.");
 
         yield return new WaitForSeconds(delayAntesTrocarCena);
 
         if (indiceCenaGameOver >= 0 && indiceCenaGameOver < SceneManager.sceneCountInBuildSettings)
         {
-            Debug.Log($"CronometroJogo: carregando cena de Ìndice {indiceCenaGameOver}");
             SceneManager.LoadScene(indiceCenaGameOver);
         }
         else
         {
-            Debug.LogError("CronometroJogo: Ìndice da cena inv·lido! Verifique Build Settings.");
+            Debug.LogError("‚ùå √çndice da cena inv√°lido. Verifique em File > Build Settings.");
         }
     }
 }

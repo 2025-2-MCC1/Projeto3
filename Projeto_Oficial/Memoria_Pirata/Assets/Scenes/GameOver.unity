@@ -300,9 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59b09eb11cb91c4ab367b28b3e97c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TentardeNovo: 
-  VoltaraoMenu: {fileID: 0}
-  Abandonar: {fileID: 0}
+  painelGameOver: {fileID: 0}
 --- !u!1 &499350732
 GameObject:
   m_ObjectHideFlags: 0
