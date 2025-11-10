@@ -2,7 +2,7 @@
 - Project name: Memoria_Pirata
 - Unity version: Unity 6000.0.38f1
 - Active game object:
-  - Name: CronometroCena
+  - Name: Game Over
   - Tag: Untagged
-  - Layer: UI
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
