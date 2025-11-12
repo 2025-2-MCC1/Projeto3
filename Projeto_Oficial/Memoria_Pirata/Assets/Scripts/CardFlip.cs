@@ -18,14 +18,13 @@ public class CardFlip : MonoBehaviour
         }
         else
         {
-            // Inicia a sequência automática de mostrar as cartas
+            // Mostra todas as cartas no início
             StartCoroutine(ShowAllCardsAtStart());
         }
     }
 
     void Update()
     {
-        // Bloqueia cliques se o GameManager não permitir
         if (gameManager == null || !gameManager.canClick)
             return;
 
@@ -41,16 +40,12 @@ public class CardFlip : MonoBehaviour
                     ? clickedObject.transform.parent.gameObject
                     : clickedObject;
 
-                // Ignora clique se não for uma carta
+                // Garante que é uma carta
                 if (parent.GetComponent<Card>() == null)
-                {
-                    Debug.Log("Clique fora da carta ignorado.");
                     return;
-                }
 
                 cardToFlip = parent;
 
-                // Impede clicar na mesma carta ou em mais de duas
                 if (cardToFlip == gameManager.cardFliped1 || cardToFlip == gameManager.cardFliped2)
                     return;
 
@@ -58,6 +53,7 @@ public class CardFlip : MonoBehaviour
                     return;
 
                 bool registered = false;
+
                 if (gameManager.cardFliped1 == null)
                 {
                     gameManager.cardFliped1 = cardToFlip;
@@ -76,22 +72,16 @@ public class CardFlip : MonoBehaviour
         }
     }
 
-    // Chamado pelo GameManager para desvirar cartas
     public void StartFlipBack(GameObject cardToUnflip)
     {
         if (cardToUnflip != null)
-        {
             StartCoroutine(FlipAnimationObject(cardToUnflip));
-        }
     }
 
     private IEnumerator FlipAnimation()
     {
         if (cardToFlip == null || !cardToFlip.activeInHierarchy)
-        {
-            cardToFlip = null;
             yield break;
-        }
 
         yield return StartCoroutine(PerformFlip(cardToFlip));
         cardToFlip = null;
@@ -105,7 +95,6 @@ public class CardFlip : MonoBehaviour
         yield return StartCoroutine(PerformFlip(card));
     }
 
-    // Faz a rotação da carta (vira ou desvira)
     private IEnumerator PerformFlip(GameObject card)
     {
         if (card == null || !card.activeInHierarchy)
@@ -126,13 +115,10 @@ public class CardFlip : MonoBehaviour
         card.transform.rotation = endRotation;
     }
 
-    //  Corrigido: sem yield dentro de finally
     private IEnumerator CheckMatchCoroutine()
     {
         gameManager.canClick = false;
         yield return new WaitForSeconds(0.6f);
-
-        bool liberarClique = true;
 
         try
         {
@@ -140,37 +126,29 @@ public class CardFlip : MonoBehaviour
             GameObject card2 = gameManager.cardFliped2;
 
             if (card1 == null || card2 == null)
-            {
-                Debug.LogWarning("Alguma carta foi destruída antes da verificação.");
                 yield break;
-            }
 
             Card c1 = card1.GetComponent<Card>();
             Card c2 = card2.GetComponent<Card>();
 
             if (c1 == null || c2 == null)
-            {
-                Debug.LogWarning("Uma das cartas não tem o componente Card.");
                 yield break;
-            }
 
             bool isMatch = false;
 
-            // Compara cardId se existir, senão usa tag
             if (!string.IsNullOrEmpty(c1.cardId) && !string.IsNullOrEmpty(c2.cardId))
-            {
-                isMatch = string.Equals(c1.cardId.Trim(), c2.cardId.Trim(), System.StringComparison.Ordinal);
-            }
+                isMatch = string.Equals(c1.cardId.Trim(), c2.cardId.Trim());
             else
-            {
-                isMatch = string.Equals(card1.tag?.Trim(), card2.tag?.Trim(), System.StringComparison.Ordinal);
-            }
+                isMatch = string.Equals(card1.tag?.Trim(), card2.tag?.Trim());
 
             if (isMatch)
             {
-                yield return new WaitForSeconds(0.25f);
-                if (card1 != null) Destroy(card1);
-                if (card2 != null) Destroy(card2);
+                // Marca e desativa — não destrói
+                c1.MarkMatched();
+                c2.MarkMatched();
+
+                card1.SetActive(false);
+                card2.SetActive(false);
             }
             else
             {
@@ -180,29 +158,18 @@ public class CardFlip : MonoBehaviour
         }
         finally
         {
-            // Não pode usar yield aqui
             gameManager.cardFliped1 = null;
             gameManager.cardFliped2 = null;
-            gameManager.canClick = true;
-            liberarClique = false;
-        }
-
-        if (liberarClique)
-        {
-            // Garante pequeno delay fora do finally
-            yield return new WaitForSeconds(0.2f);
             gameManager.canClick = true;
         }
     }
 
-    //  Vira todas as cartas juntas no início (2 segundos viradas)
     private IEnumerator ShowAllCardsAtStart()
     {
         gameManager.canClick = false;
 
         Card[] allCards = Object.FindObjectsByType<Card>(FindObjectsSortMode.None);
 
-        // Vira todas simultaneamente
         List<Coroutine> flips = new List<Coroutine>();
         foreach (Card c in allCards)
             flips.Add(StartCoroutine(PerformFlip(c.gameObject)));
@@ -210,10 +177,8 @@ public class CardFlip : MonoBehaviour
         foreach (Coroutine flip in flips)
             yield return flip;
 
-        // Mantém 2 segundos viradas
         yield return new WaitForSeconds(2f);
 
-        // Desvira todas simultaneamente
         flips.Clear();
         foreach (Card c in allCards)
             flips.Add(StartCoroutine(PerformFlip(c.gameObject)));
@@ -221,7 +186,6 @@ public class CardFlip : MonoBehaviour
         foreach (Coroutine flip in flips)
             yield return flip;
 
-        // Libera cliques
         gameManager.canClick = true;
     }
 }

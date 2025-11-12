@@ -50,11 +50,13 @@ public class GameManager : MonoBehaviour
             cardFliped1 = null;
             cardFliped2 = null;
 
+            // Desativa as cartas para remover da tela sem causar erro
             temp1.SetActive(false);
             temp2.SetActive(false);
 
-            Destroy(temp1, 0.1f);
-            Destroy(temp2, 0.1f);
+            // Evita travamento no último par — não destruir imediatamente
+            // Destroy(temp1, 0.1f);
+            // Destroy(temp2, 0.1f);
         }
 
         cardFliped1 = null;
@@ -62,3 +64,16 @@ public class GameManager : MonoBehaviour
         canClick = true;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
